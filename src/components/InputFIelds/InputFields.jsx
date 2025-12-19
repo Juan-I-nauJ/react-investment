@@ -1,28 +1,28 @@
 const inputs = [
     {
-        id: 'iniInv',
+        id: 'initialInvestment',
         label: 'Initial Investment'
     },
     {
-        id: 'anuInv',
+        id: 'annualInvestment',
         label: 'Annual Investment'
     },
     {
-        id: 'expRet',
+        id: 'expectedReturn',
         label: 'Expected Return'
     },
     {
-        id: 'dur',
+        id: 'duration',
         label: 'Duration'
     }
 ]
-
 export default function InputFields({userInputs, updateInputs}) {
+    console.log(userInputs)
     return (
         <div id="user-input">
             {inputs.map(input =>  <div className="input-group">
                 <label htmlFor={input.id}>{input.label}</label>
-                <input id={input.id} type="number" />
+                <input id={input.id} type="number" value={userInputs[input.id]} onChange={updateInputs}/>
             </div>)}
         </div>
     )
