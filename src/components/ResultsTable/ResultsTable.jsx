@@ -21,10 +21,12 @@ export default function ResultsTable({ userInputs }) {
 
     return (
         <table id="result" className="center">
-            <tbody>
+            <thead>
                 <tr>
                     {theads.map(thead => <th key={thead}>{thead}</th>)}
                 </tr>
+                </thead>
+                <tbody>
                 {finalResults().map((result, idx) =>
                     <tr key={idx}>
                         {Object.keys(result).map(field => <td key={field}>{field !== 'year' ? formatter.format(result[field]) : result[field]}</td>)}
