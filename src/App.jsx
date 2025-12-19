@@ -13,7 +13,7 @@ function App() {
 
   const handleUserInputs = ({target}) =>  {
     setUserInputs((oldInputs) => {
-      oldInputs = {...oldInputs, [target.id]: target.value}
+      oldInputs = {...oldInputs, [target.id]: Number(target.value)}
       return oldInputs
     })
   }
