@@ -1,4 +1,3 @@
-import MainHeader from "./components/MainHeader/MainHeader"
 import InputFields from "./components/InputFIelds/InputFields"
 import { useState } from "react"
 import ResultsTable from "./components/ResultsTable/ResultsTable"
@@ -18,11 +17,10 @@ function App() {
     })
   }
   return (
-    <>
-    <MainHeader />
+    <main>
     <InputFields userInputs={userInputs} updateInputs={handleUserInputs}/>
     <ResultsTable userInputs={userInputs} />
-    </>
+    </main>
   )
 }
 
