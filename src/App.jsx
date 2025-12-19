@@ -1,13 +1,14 @@
 import MainHeader from "./components/MainHeader/MainHeader"
 import InputFields from "./components/InputFIelds/InputFields"
 import { useState } from "react"
+import ResultsTable from "./components/ResultsTable/ResultsTable"
 
 function App() {
   const [userInputs, setUserInputs] = useState({
-    iniInv: 10000,
-    anuInv: 3000,
-    expRet: 5.56,
-    dur: 10
+    initialInvestment: 10000,
+    annualInvestment: 3000,
+    expectedReturn: 5.56,
+    duration: 10
   })
 
   const handleUserInputs = (newInputs) =>  {
@@ -19,6 +20,7 @@ function App() {
     <>
     <MainHeader />
     <InputFields userInputs={userInputs} updateInputs={handleUserInputs}/>
+    <ResultsTable userInputs={userInputs} />
     </>
   )
 }
